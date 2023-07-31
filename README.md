@@ -10,4 +10,4 @@
 
 ## License
 
-[MIT](https://github.com/ysxhub888/Actions-iStoreOS/blob/main/LICENSE) © [**P3TERX**](https://p3terx.com)
+[MIT](https://github.com/ysxhub888/Actions-iStoreOS/blob/main/LICENSE) © [**ysxhub888**](https://github.com/ysxhub888)
