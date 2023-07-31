@@ -1,4 +1,4 @@
-# Actions-iStoreOS
+# [Actions-iStoreOS](https://github.com/ysxhub888/Actions-iStoreOS)
 
 ## 项目使用 Github Actions 拉取 iStoreOS 的 Openwrt 源码仓库进行云编译 iStoreOS 固件
 ## 固件每天定时自动编译，以确保获得最新体验
