@@ -1,7 +1,7 @@
 # Actions-iStoreOS
 
-## 项目使用 Github Actions 拉取 iStoreOS 的 Openwrt 源码仓库进行云编译
-# 固件每天定时自动编译，以确保获得最新体验
+## 项目使用 Github Actions 拉取 iStoreOS 的 Openwrt 源码仓库进行云编译iStoreOS固件
+## 固件每天定时自动编译，以确保获得最新体验
 ## 使用方法
 - 进入 `Settings` - `Actions`创建你的 `GITHUB_TOKEN` 个人访问令牌
 - 进入 `Actions` 选择 `sync-config.yml` 拉取最新 `config` 文件
