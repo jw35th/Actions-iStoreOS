@@ -1,0 +1,41 @@
+name: Sync config
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+  schedule:
+    - cron: 25 */12 * * *
+
+jobs:
+  sync:
+    runs-on: Ubuntu-20.04
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: download config
+      run: |
+        wget -O ./feeds.conf.a https://fw0.koolcenter.com/iStoreOS/x86_64_efi/feeds.conf
+        wget -O ./a.config https://fw0.koolcenter.com/iStoreOS/x86_64_efi/config.buildinfo
+        wget -O  ./feeds.conf.b https://fw0.koolcenter.com/iStoreOS/r4s/feeds.conf
+        wget -O  ./b.config https://fw0.koolcenter.com/iStoreOS/r4s/config.buildinfo
+        wget -O ./feeds.conf.c https://fw0.koolcenter.com/iStoreOS/r5s/feeds.conf
+        wget -O ./c.config https://fw0.koolcenter.com/iStoreOS/r5s/config.buildinfo
+
+    - name: push
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        personal_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: main
+        publish_dir: ./
+        user_name: 'GitHub Action'
+        user_email: 'github-actions[bot]@github.com'
+        exclude_assets: ''
+        keep_files: true
+        commit_message: "Sync config"
+
+    - name: Delete workflow runs
+      uses: Mattraks/delete-workflow-runs@v2
+      with:
+        keep_minimum_runs: 1
+        token: ${{ secrets.GITHUB_TOKEN }}
