@@ -135,7 +135,7 @@ jobs:
         tar -zcvf Packages.tar.gz openwrt/bin/packages
         cp Packages.tar.gz openwrt/bin/targets/*/*
         cd openwrt/bin/targets/*/*
-        rm -rf packages
+        rm -rf $(find ./bin/targets/ -iregex ".*\(json\|manifest\|buildinfo\|sha256sums\|packages\)$")
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> ${GITHUB_OUTPUT}
 
@@ -150,7 +150,7 @@ jobs:
       id: release
       uses: ncipollo/release-action@v1
       with:
-        name: ${{ env.PRODUCT_NAME }} ❤️ ${{ env.DATE }}
+        name: ${{ env.PRODUCT_NAME }} ❤️ ${{ env.FILE_DATE }}
         allowUpdates: true
         removeArtifacts: true
         tag: ${{ env.FILE_NAME }}
