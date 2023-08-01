@@ -4,7 +4,7 @@
 ## 固件每天定时自动编译，以确保获得最新体验
 ## 使用方法
 - 进入 `Settings` - `Actions`创建你的 `GITHUB_TOKEN` 个人访问令牌
-- 进入 `Actions` 选择 `action.yml` 拉取最新 `config` 文件
+- 进入 `Actions` 选择 `Sync config.yml` 拉取最新 `config` 文件
 - 进入 `Actions` 选择自己需要编译的固件工作流
 - 等两--三个小时回来，就可以在 `Releases` 发布页下载你的固件了 
 
